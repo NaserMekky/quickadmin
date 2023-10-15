@@ -10,13 +10,14 @@
 
 <div class="container">
     <h2>Create Mudul </h2>
-    <form action="{{  route('quick.store') }}" method="POST" >
+    <form action="{{  route('settings.update', $key) }}" method="POST" >
         @csrf
-
+        @method('PUT')
         <div class="form-group">
-            <label for="model_name"> Model Name:</label>
-            <input type="text" class="form-control" id="model_name" name="model_name">
+            <label for="key"> {{ $key }}:</label>
+            <input type="text" class="form-control" id="model_name" name="value" value="{{ $value }}">
         </div>
+      
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>
