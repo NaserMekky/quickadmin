@@ -11,13 +11,11 @@ Route::get('test', function() {
 
 
 
-    config(['quickadmin.naser' => 'Naser New']);
+    config('naser' ,'config/quickadmin.php');
 
-    $text = '<?php return ' . var_export(config('quickadmin'), true) . ';';
-    file_put_contents(config_path('quickadmin.php'), $text);
+   
 
-
-    dd(var_export(file_get_contents(config_path('quickadmin.php')), true));
+    dd(config('quickadmin'));
 }
 );
 

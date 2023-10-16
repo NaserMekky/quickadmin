@@ -31,7 +31,7 @@ class QuickAdminSettingController extends Controller
 
         file_put_contents(
             config_path('quickadmin.php'),
-            $this->configToString('quickadmin')); 
+            $this->configToString('quickadmin'));
 
         return redirect('settings');
 
@@ -63,7 +63,7 @@ class QuickAdminSettingController extends Controller
 
         file_put_contents(
             config_path('quickadmin.php'),
-            $this->configToString('quickadmin')); 
+            $this->configToString('quickadmin'));
 
         return redirect()->route('settings.index');
     }
@@ -72,14 +72,14 @@ class QuickAdminSettingController extends Controller
     * Remove the specified resource from storage.
     */
     public function destroy(string $key) {
-       $settings = config('quickadmin');
+        $settings = config('quickadmin');
         unset($settings[$key]);
- $text = '<?php '.PHP_EOL.' return '
+        $text = '<?php '.PHP_EOL.' return '
         .str_replace(['array (', ')'], ['[', ']'],
             var_export($settings, true)). ';';
-  
+
         file_put_contents(
-            config_path('quickadmin.php'),  $text);
+            config_path('quickadmin.php'), $text);
 
         return redirect()->route('settings.index');
     }
@@ -91,4 +91,3 @@ class QuickAdminSettingController extends Controller
             var_export(config($configPath), true)). ';';
     }
 }
-

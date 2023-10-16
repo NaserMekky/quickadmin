@@ -1,19 +1,25 @@
 {
     "name": "nasermekky/quickadmin",
     "description": "Create Crud For Laravel",
-    "type": "project",
-    "license": "MIT",
-    "minimum-stability": "dev",
-    "authors": [
-        {
-            "name": "NaserMekky",
-            "email": "nasermekky11@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "NaserMekky",
+        "email": "nasermekky11@gmail.com"
+    }],
     "autoload": {
         "psr-4": {
             "Nasermekky\\Quickadmin\\": "src/"
         }
     },
-    "require": {}
+    
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nasermekky\\Quickadmin\\Providers\\QuickAdminProvider"  
+            ]
+        }
+    },
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+
 }
